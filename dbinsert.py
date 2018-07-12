@@ -57,11 +57,11 @@ def dateTime(year):
 
 
 def f(x):
-    i = x * 10000
-    j = (x + 1) * 10000
+    i = x * 1000000
+    j = (x + 1) * 1000000
     print i
     print j
-    con  = psycopg2.connect("host='localhost' dbname='testdb' user='postgres' password='root'")
+    con  = psycopg2.connect("host='localhost' dbname='test' user='pythonspot' password='123'")
     cur = con.cursor()
     print "c0nn g00d"
     while i < j:
@@ -81,8 +81,7 @@ def f(x):
         i = i + 1
     con.commit()
 
-
-if __name__ == '__main__':
+def insert_random():
     pool = Pool(processes=10)
 
     pool.map(f, [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
